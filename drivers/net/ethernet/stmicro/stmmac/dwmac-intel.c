@@ -735,6 +735,8 @@ static int intel_mgbe_common_data(struct pci_dev *pdev,
 				dev_warn(&pdev->dev, "Invalid phy-mode\n");
 		}
 	}
+        phy_mode = PHY_INTERFACE_MODE_SGMII;
+	plat->phy_interface = phy_mode;
 
 	/* Intel mgbe SGMII interface uses pcs-xcps */
 	if (plat->phy_interface == PHY_INTERFACE_MODE_SGMII ||
